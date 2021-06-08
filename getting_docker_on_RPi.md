@@ -101,3 +101,25 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
+
+### To get the Wifi up and Running
+```
+ls /sys/class/net
+sudo nano /etc/netplan/50-cloud-init.yaml
+```
+and replace the content with the following lines
+```
+network:
+    ethernets :
+        ethO:
+            dhcp4: true
+            optional: true
+    version: 2
+    wifis:
+        wlan0:
+		    dhcp4: true
+            optional: true
+            access—points :
+                "MyWiFi " :
+                    password: "MyPass"
+```
