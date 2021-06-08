@@ -107,7 +107,8 @@ For more examples and ideas, visit:
 ls /sys/class/net
 sudo nano /etc/netplan/50-cloud-init.yaml
 ```
-and replace the content with the following lines
+and replace the content with the following lines.
+> **Note:** Change '''MyWifi''' to your wifi SSID and ```MyPass``` to your wifi password.
 ```
 network:
     ethernets :
@@ -117,9 +118,9 @@ network:
     version: 2
     wifis:
         wlan0:
-		    dhcp4: true
+	    dhcp4: true
             optional: true
             access—points :
-                "MyWiFi " :
+	        "MyWiFi" :
                     password: "MyPass"
 ```
